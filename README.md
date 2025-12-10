@@ -42,6 +42,19 @@ CPU
 14 vCPU Intel(R) Xeon(R) Gold 6330 CPU @ 2.00GHz
 ```
 
+下载此仓库
+```bash
+# 克隆到临时文件夹（避免目录冲突）
+git clone https://github.com/sea-abc/LLM-quantization-basic.git temp_repo
+
+# 将临时文件夹中的内容移动到当前目录
+mv temp_repo/* .
+
+# 删除临时文件夹（可选）
+rm -rf temp_repo
+```
+
+
 1. 克隆相应的环境过来
 
 ```bash
