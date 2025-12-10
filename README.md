@@ -8,7 +8,7 @@
 ├── llm_int8_demo.py      # 8bit 量化示例代码
 ├── llm_QLoRA_int4.py     # 4bit 量化 (QLoRA) 示例代码
 ├── 量化基础.ipynb         # 量化技术基础知识和代码示例：包括对称动态/静态量化，量化感知
-└── requirements.txt      # Python 依赖列表
+└── README.md             # 文档说明
 ```
 
 ## 量化技术介绍
