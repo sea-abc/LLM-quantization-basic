@@ -7,7 +7,7 @@
 ```
 ├── llm_int8_demo.py      # 8bit 量化示例代码
 ├── llm_QLoRA_int4.py     # 4bit 量化 (QLoRA) 示例代码
-├── 量化基础.ipynb         # 量化技术基础知识和代码示例
+├── 量化基础.ipynb         # 量化技术基础知识和代码示例：包括对称动态/静态量化，量化感知
 └── requirements.txt      # Python 依赖列表
 ```
 
@@ -68,8 +68,21 @@ source activate /root/autodl-tmp/quantization
 2. 安装核心依赖：
 
 ```bash
-pip install -r requirements.txt
+pip install accelerate==0.34.2
+pip install \
+transformers==4.52.1 \
+bitsandbytes==0.43.3 \
+huggingface-hub==0.30.1 \
+tokenizers==0.21.4 \
+ipykernel==6.29.5 \
+-i http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com
 ```
+
+3. 如果想在jupyter notebook中使用上述环境，需要安装对应的ipykernel
+```bash
+python -m ipykernel install --user --name=quantization --display-name "Python (quantization)"
+```
+之后打开一个ipynb文件后，右上角切换内核至 Python (quantization) 即可。
 
 ## 运行示例
 
@@ -91,7 +104,7 @@ python llm_QLoRA_int4.py
 
 这个 Jupyter Notebook 提供了量化技术的基础知识和实践示例：
 
-- 对称动态量化的代码实现
+- 对称动态/静态量化、量化感知的代码实现
 - 量化前后参数变化的直观展示
 - 推理性能对比
 - 详细的注释和解释，适合初学者学习量化技术原理
